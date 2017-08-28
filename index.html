@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Introducción a R</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Introducción a R">
+  <meta name="author" content="Julio César Ramírez Pacheco">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/quiz/css/demo.css"></link>
+<link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="libraries/widgets/interactive/css/aceeditor.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+      <slide class="nobackground">
+    <article class="flexbox vcenter">
+      <span>
+        <img width='300px' src="assets/img/uqroo.png">
+      </span>
+    </article>
+  </slide>
+    <slide class="title-slide segue nobackground">
+  <aside class="gdbar">
+    <img src="assets/img/uqroo.png">
+  </aside>
+  <hgroup class="auto-fadein">
+    <h1>Introducción a R</h1>
+    <h2>Estructura de datos en R</h2>
+    <p>Julio César Ramírez Pacheco<br/>Universidad del Caribe</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <article data-timings="">
+    <style type="text/css">
+body {background:grey transparent;
+}
+</style>
+
+<h2>Breve historia de R</h2>
+
+<ul class = "build incremental">
+<li>¿Qué es R?.</li>
+<li>R es un dialecto de S. S fué implementado por John Chambers y Rick Becker en los laboratorios Bell en 1976.</li>
+<li>En 1988, la versión 3 de S fue reescrita en C.</li>
+<li>En 1998, la versión 4 de S fué anunciada y es la versión que más o menos se lleva hoy.</li>
+<li>S fué adquirido por Insightful que creo el sistema S+ (versión comercial de S). En 1998, S ganó el prestigioso premio de software de la ACM.</li>
+<li>Los fundamentos de S no han cambiado desde 1998.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Breve historia de R (continuación)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li>R, por otro lado fué desarrollado por Ross Ihaka y Robert Gentleman en la Universidad de Auckland.</li>
+<li>El proyecto fué iniciado en 1992 y la versión inicial fue presentada en 1995. La primera versión estable fue presentada hasta el año 2000 (llamada la versión 1.0.0).</li>
+<li>La versión 3.0.2 fué lanzada hasta el 2013.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-3" style="background:grey;">
+  <hgroup>
+    <h2>Características, ventajas y desventajas</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Características de R</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li>Síntaxis similar a S.</li>
+<li>Se puede ejecutar en cualquier sistema operativo (Windows, MacOSX, Linux, Unix) así como en playstation 3 y sistemas Android (mediante GNURoot).</li>
+<li>Se presentan versiones nuevas de manera frecuente (actualmente la versión 3.3.2).</li>
+<li>Tiene un sistema de gráficos muy sofisticado (utilizando paquetes como <em>ggplot</em> y <em>plot.ly</em>).</li>
+<li>Muy útil de forma interactiva (desde la consola de <em>R</em>) y además contiene un lenguaje de programación muy poderoso.</li>
+<li>Tiene una comunidad de programadores y seguidores muy activa y es muy fácil buscar la solución a un problema en particular.</li>
+<li>Contiene mas de 8000 paquetes que incrementan la funcionalidad del lenguaje y además es de acceso libre.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Desventajas de R</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li>Está basado en ideas y tecnología de hace 40 años.</li>
+<li>Tiene poco soporte para gráficos en 3D.</li>
+<li>Los objetos se tienen que tener en memoria.</li>
+<li>No es ideal para todos los problemas además de que en ocasiones suele ser lento.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-6" style="background:grey;">
+  <hgroup>
+    <h2>Buscando ayuda en R</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Buscando ayuda</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Antes de pedir ayuda a algún compañero es buena idea intentar buscar ayuda dentro de <code>R</code> o bién buscar en los sitios de internet que ofrecen ayuda sobre <code>R</code>.</li>
+<li>Los comandos <code>help</code> y <code>?</code> llevan al usuario a la documentación de ayuda de las funciones de <code>R</code>, sobre un <code>dataset</code> u otro objeto.</li>
+</ul>
+
+<pre><code class="r">help(&quot;mean&quot;)   # también se puede ejercutar help(&#39;mean&#39;) o help(mean)
+?mean          # se puede llamar igualmente ?&#39;mean&#39; o ?&quot;mean&quot;
+?&quot;+&quot;
+help.start()   # muestra la página general de ayuda en R
+</code></pre>
+
+<ul>
+<li>Si se requiere pedir ayuda de una función (e.g., <code>lmModel</code>) en un paquete de <code>R</code> (e.g., <code>fractal</code>) se puede hacer como:</li>
+</ul>
+
+<pre><code class="r">help(lmModel, package =&quot;fractal&quot;)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Ayuda (continuación)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Para entrar a la ayuda de un paquete (e.g., <code>longmemo</code>) se ejecuta:</li>
+</ul>
+
+<pre><code class="r">help(package = &quot;longmemo&quot;)
+</code></pre>
+
+<ul>
+<li>En ocasiones es de utilidad ver ejemplos sobre la utilización de una función en <code>R</code>,</li>
+</ul>
+
+<pre><code class="r">example(sd)
+</code></pre>
+
+<ul>
+<li>De igual forma, en ocasiones es de utilidad ver una demostración de uso de una función en <code>R</code>, esto se hace como:</li>
+</ul>
+
+<pre><code class="r">demo()     # Muestra las demonstraciones disponibles en los paquetes
+demo(package=&quot;stats&quot;)   # Demostraciones en el paquete &quot;stats&quot;
+demo(&quot;nlm&quot;)             # Demo para la función nlm
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Ayuda (continuación)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>La funciones <code>help</code> y <code>?</code> son útiles si se sabe el nombre de la función. Sin embargo en ocasiones, no se conoce el nombre del comando para realizar cierta operación (e.g., para estimar la varianza agregada de un proceso fractal)</li>
+<li>La función <code>apropos()</code> busca objetos, incluyendo funciones en la sesión actual de <code>R</code>. </li>
+</ul>
+
+<pre><code class="r">apropos(&quot;^glm&quot;) # Busca objetos que empiecen con la expresión glm
+</code></pre>
+
+<ul>
+<li><p>La función <code>help.search()</code>, también abreviada como <code>??</code> busca en la documentación de todos los paquetes instalados en nuestro sistema <code>R</code>.</p></li>
+<li><p>De igual forma se puede ejecutar el comando <code>RSiteSearch()</code> que busca ayuda en <strong>CRAN</strong>.</p></li>
+<li><p>Internet proporciona otros medios como los <strong>CRAN Task Views</strong>, <strong>Stack Overflow</strong>, <strong>R FAQs</strong> y listas de correo de <code>R</code>.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-10" style="background:grey;">
+  <hgroup>
+    <h2>Comandos básicos</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>Comandos básicos en <code>R</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Es importante conocer el directorio de trabajo actual, lo anterior se obtiene mediante el comando <code>getwd()</code> y se cambia con <code>setwd()</code></li>
+</ul>
+
+<pre><code class="r">setwd(&quot;/Users/monoxide2000/Desktop/slidesMetodos_parte1/&quot;)
+getwd()
+</code></pre>
+
+<pre><code>## [1] &quot;/Users/monoxide2000/Desktop/slidesMetodos_parte1&quot;
+</code></pre>
+
+<ul>
+<li>El comando <code>ls()</code> lista los objetos en el <strong>environment</strong> de <code>R</code>.</li>
+</ul>
+
+<pre><code class="r">ls()
+</code></pre>
+
+<pre><code>## [1] &quot;dato&quot; &quot;m&quot;    &quot;x&quot;
+</code></pre>
+
+<ul>
+<li>Se usan los símbolos <code>#</code> y <code>&lt;-</code> para comentarios y asignar valores a una variable. Los comandos <code>quit()</code> o <code>q()</code> cierran <code>R</code>. </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-12" style="background:grey;">
+  <hgroup>
+    <h2>Estructura de datos en R</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Estructuras de datos básicas</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><code>R</code> contiene 4 estructuras de datos básicas las cuales se pueden agrupar de acuerdo al tipo de datos que contienen o bien de acuerdo a su dimensionalidad.</li>
+<li>Básicamente se agrupan como:</li>
+</ul>
+
+<table><thead>
+<tr>
+<th></th>
+<th>Homogéneo</th>
+<th>Heterogéneo</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1d</td>
+<td>Vectores atómicos</td>
+<td>Listas</td>
+</tr>
+<tr>
+<td>2d</td>
+<td>Matrices</td>
+<td>Dataframes</td>
+</tr>
+<tr>
+<td>nd</td>
+<td>Array</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<ul>
+<li>Las estructuras de datos más complejas se construyen a partir de éstas y podemos conocer la estructura mediante el comando <code>str()</code>, que es una abreviación para <code>structure</code>.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Estructuras de datos (continuación)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>A continuación se muestran ejemplos del comando <code>str()</code> para diversos tipos de datos.</li>
+</ul>
+
+<pre><code class="r">dato &lt;- 1:5
+str(dato)
+</code></pre>
+
+<pre><code>##  int [1:5] 1 2 3 4 5
+</code></pre>
+
+<pre><code class="r">x &lt;- list(num=1, chr=c(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;),logi=c(T,T,F,T))
+str(x)
+</code></pre>
+
+<pre><code>## List of 3
+##  $ num : num 1
+##  $ chr : chr [1:3] &quot;a&quot; &quot;b&quot; &quot;c&quot;
+##  $ logi: logi [1:4] TRUE TRUE FALSE TRUE
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-15" style="background:grey;">
+  <hgroup>
+    <h2>Vectores</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>Vectores atómicos</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>El vector es la estructura de datos más básica en <code>R</code>.  Los vectores se pueden clasificar como vectores atómicos y listas.</li>
+<li>Los vectores tienen tres propiedades cómunes:
+
+<ul>
+<li>El tipo, obtenido mediante el comando <code>typeof()</code> e indica qué es.</li>
+<li>La longitud, obtenido mediante <code>length()</code> e indica cuántos elementos tiene.</li>
+<li>Los atributos, definidos mediante <code>attributes()</code> o <code>attr()</code>, la cual sirve para especificar metadatos a los objetos.</li>
+</ul></li>
+<li>Como se mencionó anteriormente difieren en los tipos de datos que pueden contener (homogéneos o heterogéneos).</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Vectores atómicos (continuación)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Los vectores atómicos pueden ser de \(6\) tipos: <code>character</code>, <code>numeric</code>, &#39;integer&#39;, <code>complex</code>, <code>logical</code> y <code>raw</code>.</li>
+</ul>
+
+<table><thead>
+<tr>
+<th>Ejemplo</th>
+<th>Tipo de vector atómico</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>&quot;a&quot;</code>, <code>&quot;swc&quot;</code></td>
+<td><code>character</code></td>
+</tr>
+<tr>
+<td><code>2</code>, <code>15.5</code></td>
+<td><code>numeric</code></td>
+</tr>
+<tr>
+<td><code>2L</code> (se le añade el sufijo <code>L</code> para denotar un <code>integer</code>)</td>
+<td><code>integer</code></td>
+</tr>
+<tr>
+<td><code>TRUE</code>, <code>FALSE</code></td>
+<td><code>logical</code></td>
+</tr>
+<tr>
+<td><code>1+4i</code></td>
+<td><code>complex</code></td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Vectores atómicos (continuación)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>En <code>R</code> se pueden crear vectores vacíos con el comando <code>vector()</code>. Por defecto el vector es lógico, sin embargo podemos crear vectores numéricos con <code>numeric()</code> o <code>vector(&quot;numeric&quot;)</code> de igual forma se pueden crear valores lógicos con <code>logical</code>, etc.</li>
+</ul>
+
+<pre><code class="r">vector()    # crea un vector lógico sin elementos (vacío)
+</code></pre>
+
+<pre><code>## logical(0)
+</code></pre>
+
+<pre><code class="r">vector(length=4)   # crea un vector lógico con 4 elementos (FALSE) = `vector(&quot;logical&quot;,4)`
+</code></pre>
+
+<pre><code>## [1] FALSE FALSE FALSE FALSE
+</code></pre>
+
+<pre><code class="r">vector(&quot;numeric&quot;, 4) # Crea un vector númerico con 4 elementos (por defecto 0)
+</code></pre>
+
+<pre><code>## [1] 0 0 0 0
+</code></pre>
+
+<pre><code class="r">numeric(4)  #idem
+</code></pre>
+
+<pre><code>## [1] 0 0 0 0
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Vectores atómicos (continuación)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Además de los comandos anteriores <code>R</code> puede crear vectores atómicos mediante el comando <code>c()</code> que significa <strong>combinar</strong>.</li>
+</ul>
+
+<pre><code class="r">(x &lt;- c(1,2.3,4.2,5.7,8))   # Crea un vector númerico.
+</code></pre>
+
+<pre><code>## [1] 1.0 2.3 4.2 5.7 8.0
+</code></pre>
+
+<pre><code class="r">(y &lt;- c(1L,8L,9L))          # Crea un vector de enteros.
+</code></pre>
+
+<pre><code>## [1] 1 8 9
+</code></pre>
+
+<pre><code class="r">z &lt;- c(&quot;a&quot;,&quot;letra&quot;,&quot;c&quot;)   # Crea un vector de caracteres
+(im &lt;- c(2+3i,4+5i))        # Crea un vector de números complejos.
+</code></pre>
+
+<pre><code>## [1] 2+3i 4+5i
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Vectores atómicos (continuación)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Podemos examinar el tipo o clase objeto mediante los comandos <code>typeof()</code> y <code>class()</code></li>
+</ul>
+
+<pre><code class="r">typeof(x)
+</code></pre>
+
+<pre><code>## [1] &quot;double&quot;
+</code></pre>
+
+<pre><code class="r">typeof(y)
+</code></pre>
+
+<pre><code>## [1] &quot;integer&quot;
+</code></pre>
+
+<pre><code class="r">class(im)
+</code></pre>
+
+<pre><code>## [1] &quot;complex&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Vectores atómicos (continuación)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>El comando <code>c()</code> me permite agregar elementos a un vector existente</li>
+</ul>
+
+<pre><code class="r">fir &lt;- c(&quot;a&quot;,&quot;e&quot;,&quot;i&quot;)
+let &lt;- c(&quot;c&quot;,&quot;d&quot;,&quot;f&quot;)
+tot1 &lt;- c(fir,&quot;u&quot;)
+print(tot1)
+</code></pre>
+
+<pre><code>## [1] &quot;a&quot; &quot;e&quot; &quot;i&quot; &quot;u&quot;
+</code></pre>
+
+<pre><code class="r">tot2 &lt;- c(let,&quot;m&quot;)
+tot2
+</code></pre>
+
+<pre><code>## [1] &quot;c&quot; &quot;d&quot; &quot;f&quot; &quot;m&quot;
+</code></pre>
+
+<pre><code class="r">tot &lt;- c(tot1,tot2)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Vectores atómicos (continuación)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Se pueden crear secuencias de vectores numéricos mediante el comando <code>:</code>, que crea secuencias e intervalos de \(\pm 1\).</li>
+</ul>
+
+<pre><code class="r">2:6   # Crea un vector del 2 al 6 e intervalos de 1
+</code></pre>
+
+<pre><code>## [1] 2 3 4 5 6
+</code></pre>
+
+<pre><code class="r">6.1:3 # Crea un vector iniciando en 3.1
+</code></pre>
+
+<pre><code>## [1] 6.1 5.1 4.1 3.1
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Vectores atómicos (continuación)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>El comando <code>:</code> se puede generalizar mediante el comando <code>seq</code> el cual genera secuencias de cualquier longitud y espaciado en un intervalo.</li>
+</ul>
+
+<pre><code class="r">seq(from=2, to = 5, by=2)
+</code></pre>
+
+<pre><code>## [1] 2 4
+</code></pre>
+
+<pre><code class="r">seq(from=2, to = 5, length=6)
+</code></pre>
+
+<pre><code>## [1] 2.0 2.6 3.2 3.8 4.4 5.0
+</code></pre>
+
+<pre><code class="r">seq(2,5,length=6)
+</code></pre>
+
+<pre><code>## [1] 2.0 2.6 3.2 3.8 4.4 5.0
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Vectores atómicos (continuación)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>¿Qué sucede si en un vector atómico mezclamos objetos de diferentes tipos?</li>
+<li><code>R</code> en este caso creará el vector con mayor jerarquía. Por ejemplo:</li>
+</ul>
+
+<pre><code class="r">(x &lt;- c(1.6,&quot;a&quot;))
+</code></pre>
+
+<pre><code>## [1] &quot;1.6&quot; &quot;a&quot;
+</code></pre>
+
+<pre><code class="r">(x &lt;- c(TRUE,2))
+</code></pre>
+
+<pre><code>## [1] 1 2
+</code></pre>
+
+<pre><code class="r">(x &lt;- c(2.5,3+4i,1L))
+</code></pre>
+
+<pre><code>## [1] 2.5+0i 3.0+4i 1.0+0i
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Vectores atómicos (continuación)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Las operaciones anteriores se llaman <strong>forzado (coerción) implicito(a)</strong>, sin embargo también se puede hacer de forma explicita mediante el comando <code>as.&lt;nombre.clase&gt;</code>, e.g.,</li>
+</ul>
+
+<pre><code class="r">as.numeric(c(T,T,F,T,F))
+</code></pre>
+
+<pre><code>## [1] 1 1 0 1 0
+</code></pre>
+
+<pre><code class="r">as.logical(c(1,-1,0,0,45,61))
+</code></pre>
+
+<pre><code>## [1]  TRUE  TRUE FALSE FALSE  TRUE  TRUE
+</code></pre>
+
+<pre><code class="r">as.logical(c(&quot;a&quot;,&quot;f&quot;,&quot;m&quot;))
+</code></pre>
+
+<pre><code>## [1] NA NA NA
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Vectores atómicos (continuación)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>En ocasiones existe coerción implícita en las operaciones, e.g.,</li>
+</ul>
+
+<pre><code class="r">1 &lt; &quot;2&quot;
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+<pre><code class="r">sin(c(T,T,F,F))
+</code></pre>
+
+<pre><code>## [1] 0.841471 0.841471 0.000000 0.000000
+</code></pre>
+
+<pre><code class="r">!c(1.4,0,3)
+</code></pre>
+
+<pre><code>## [1] FALSE  TRUE FALSE
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-27" style="background:grey;">
+  <hgroup>
+    <h2>Matrices</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-28" style="background:;">
+  <hgroup>
+    <h2>Matrices</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Las matrices son un tipo especial de vector en <code>R</code>. Son simplemente vectores atómicos con el atributo dimensión.</li>
+</ul>
+
+<pre><code class="r">matrix(nrow = 2, ncol = 2)
+</code></pre>
+
+<pre><code>##      [,1] [,2]
+## [1,]   NA   NA
+## [2,]   NA   NA
+</code></pre>
+
+<pre><code class="r">vec   &lt;- 5:10
+mat   &lt;-matrix(vec,nrow=3)
+dim(mat)
+</code></pre>
+
+<pre><code>## [1] 3 2
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="slide-29" style="background:;">
+  <hgroup>
+    <h2>Matrices</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Las matrices también se pueden crear asignándole el atributo dimensión a un vectos atómico, e.g.,</li>
+</ul>
+
+<pre><code class="r">vec        &lt;- 3:12
+dim(vec)   &lt;- c(5,2)
+vec
+</code></pre>
+
+<pre><code>##      [,1] [,2]
+## [1,]    3    8
+## [2,]    4    9
+## [3,]    5   10
+## [4,]    6   11
+## [5,]    7   12
+</code></pre>
+
+<pre><code class="r">dim(vec)   &lt;- c(4,4)
+</code></pre>
+
+<pre><code>## Error in dim(vec) &lt;- c(4, 4): dims [producto 16] no coincide con la longitud del objeto [10]
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="slide-30" style="background:;">
+  <hgroup>
+    <h2>Matrices</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Las matrices, por último se pueden crear mediante la concatenación de filas o columnas de vectores.</li>
+</ul>
+
+<pre><code class="r">rbind(c(1,2,3), c(2,4,5))
+</code></pre>
+
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    2    4    5
+</code></pre>
+
+<pre><code class="r">cbind(c(1,2,3), c(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;))
+</code></pre>
+
+<pre><code>##      [,1] [,2]
+## [1,] &quot;1&quot;  &quot;a&quot; 
+## [2,] &quot;2&quot;  &quot;b&quot; 
+## [3,] &quot;3&quot;  &quot;c&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-31" style="background:grey;">
+  <hgroup>
+    <h2>Listas</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-32" style="background:;">
+  <hgroup>
+    <h2>Listas</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Las listas actuan como contenedores, a diferencia de los vectores atómicos el contenido puede ser de diversos tipos. Creamos una lista con el comando <code>as.list()</code> y hacemos la coerción a lista mediante <code>as.list()</code></li>
+</ul>
+
+<pre><code class="r">x &lt;- list(Numeros = c(3,4,9), logi = c(T,F), list(a=1,b=&quot;a&quot;))
+x
+</code></pre>
+
+<pre><code>## $Numeros
+## [1] 3 4 9
+## 
+## $logi
+## [1]  TRUE FALSE
+## 
+## [[3]]
+## [[3]]$a
+## [1] 1
+## 
+## [[3]]$b
+## [1] &quot;a&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Listas (continuación)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>El comando <code>str()</code> me permite checar kla estructura de la lista de una forma más amena.</li>
+</ul>
+
+<pre><code class="r">x &lt;- list(Numeros = c(3,4,9), logi = c(T,F), list(a=1))
+str(x)
+</code></pre>
+
+<pre><code>## List of 3
+##  $ Numeros: num [1:3] 3 4 9
+##  $ logi   : logi [1:2] TRUE FALSE
+##  $        :List of 1
+##   ..$ a: num 1
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-34" style="background:grey;">
+  <hgroup>
+    <h2>Dataframes</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-35" style="background:;">
+  <hgroup>
+    <h2>Dataframes</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Los <code>dataframes</code> son los tipos de datos más populares en <code>R</code>.<br></li>
+<li>Los <code>dataframes</code> se crean mediante la función <code>data.frame()</code> o bien en la lectura de archivos mediante los comandos <code>read.csv()</code>, <code>read.table()</code>.</li>
+<li>Podemos convertir un <code>dataframe</code> en una matriz por medio del comando <code>data.matrix()</code>.
+Los comandos <code>nrow()</code> y <code>ncol()</code> permiten conocer el número de filas y columnas de un <code>dataframe</code>.</li>
+<li>Otras funciones útiles son: <code>head()</code>, <code>tail()</code>, <code>dim()</code>, <code>nrow()</code>, <code>ncol()</code>, <code>str()</code> y `names()</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Dataframes (continuación)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Como se mencionó con anterioridad el comando <code>data.frame()</code> genera un <code>dataframe</code>, e.g.,</li>
+</ul>
+
+<pre><code class="r">df &lt;- data.frame(let = letters[1:10], num =1:10, vars = runif(10))
+df
+</code></pre>
+
+<pre><code>##    let num      vars
+## 1    a   1 0.8071137
+## 2    b   2 0.5978999
+## 3    c   3 0.1921755
+## 4    d   4 0.2367058
+## 5    e   5 0.6841478
+## 6    f   6 0.2301506
+## 7    g   7 0.3992139
+## 8    h   8 0.3550818
+## 9    i   9 0.5604982
+## 10   j  10 0.5383901
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title=''>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Breve historia de R (continuación)'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Características, ventajas y desventajas'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Características de R'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Desventajas de R'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Buscando ayuda en R'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Buscando ayuda'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Ayuda (continuación)'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Ayuda (continuación)'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Comandos básicos'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Comandos básicos en <code>R</code>'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Estructura de datos en R'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Estructuras de datos básicas'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Estructuras de datos (continuación)'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Vectores'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Vectores atómicos'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Vectores atómicos (continuación)'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='Vectores atómicos (continuación)'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Vectores atómicos (continuación)'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='Vectores atómicos (continuación)'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='Vectores atómicos (continuación)'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='Vectores atómicos (continuación)'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='Vectores atómicos (continuación)'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='Vectores atómicos (continuación)'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='Vectores atómicos (continuación)'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='Vectores atómicos (continuación)'>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='Matrices'>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='Matrices'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='Matrices'>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='Matrices'>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='Listas'>
+         31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title='Listas'>
+         32
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=33 title='Listas (continuación)'>
+         33
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=34 title='Dataframes'>
+         34
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=35 title='Dataframes'>
+         35
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=36 title='Dataframes (continuación)'>
+         36
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=37 title=''>
+         37
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/quiz/js/jquery.quiz.js"></script>
+<script src="libraries/widgets/quiz/js/mustache.min.js"></script>
+<script src="libraries/widgets/quiz/js/quiz-app.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+<script src="libraries/widgets/interactive/js/ace/js/ace.js"></script>
+<script src="libraries/widgets/interactive/js/opencpu-0.5.js"></script>
+<script src="libraries/widgets/interactive/js/interactive.js"></script>
+
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
